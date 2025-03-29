@@ -1,15 +1,17 @@
 {% extends 'layout.html' %}
 {% block content %}
 <h1>Signup Form</h1>
+<br>
+<h3> ALL passwords must contain a lowercase letter, a capital letter, a number and a special character</h3>
 <form action="/signup.html" method="POST" class="box">
     <div class="input__wrapper">
-        <input type="text" name="username" placeholder="Username" class="input__field">
+        <input minlength="3" maxlength="20" type="text" name="username" placeholder="Username" class="input__field" required>
     </div>            
     <div class="input__wrapper">
-        <input type="password" name="password" placeholder="Password" class="input__field">
+        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{10,}$" type="password" name="password" placeholder="Password" class="input__field" required>
     </div>
     <div class="input__wrapper">
-        <input type="dateOfBirth" name="dob" placeholder="Date of Birth" class="input__field">
+        <input placeholder="DD/MM/YYYY" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" type="dateOfBirth" name="dob" placeholder="Date of Birth" class="input__field" required>
     </div>
     <div class="input__wrapper">
         <button type="submit" class="btn">Submit</button>

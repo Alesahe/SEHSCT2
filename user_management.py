@@ -1,9 +1,12 @@
 import sqlite3 as sql
 import time
 import random
-
+import html
 
 def insertUser(username, password, DoB):
+    html.escape(username, quote=True)
+    html.escape(password, quote=True)
+    html.escape(password, quote=True)
     con = sql.connect("database_files/database.db")
     cur = con.cursor()
     cur.execute(
@@ -15,6 +18,9 @@ def insertUser(username, password, DoB):
 
 
 def retrieveUsers(username, password):
+    html.escape(username, quote=True)
+    html.escape(password, quote=True)
+
     con = sql.connect("database_files/database.db")
     cur = con.cursor()
     cur.execute(f"SELECT * FROM users WHERE username = '{username}'")
@@ -40,6 +46,7 @@ def retrieveUsers(username, password):
 
 
 def insertFeedback(feedback):
+    html.escape(feedback)
     con = sql.connect("database_files/database.db")
     cur = con.cursor()
     cur.execute(f"INSERT INTO feedback (feedback) VALUES ('{feedback}')")

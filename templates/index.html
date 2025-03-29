@@ -6,7 +6,7 @@
         <input type="text" name="username" id="username" placeholder="Username" class="input__field" required/>
     </div>
     <div class="input__wrapper">
-        <input type="password" name="password" id="password" placeholder="Password" class="input__field" required/>
+        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{10,}$" type="password" name="password" id="password" placeholder="Password" class="input__field" required/>
     </div>
     <div class="input__wrapper">
         <input type="submit" class="btn" value="Log In" />
