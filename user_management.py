@@ -59,11 +59,14 @@ def updateVisitorCount():
     # Plain text log of visitor count as requested by Unsecure PWA management
     lockedFile = "visitor_log.txt.lock"
     with FileLock("visitor_log.txt.lock"):
-        with open("visitor_log.txt", "r") as file:
-            number = int(file.read().strip())
-            number += 1
-        with open("visitor_log.txt", "w") as file:
-            file.write(str(number))
+        try:
+            with open("visitor_log.txt", "r") as file:
+                number = int(file.read().strip())
+                number += 1
+            with open("visitor_log.txt", "w") as file:
+                file.write(str(number))
+        except FileNotFoundError:
+            print("Error: There is no visitor log file.")
 
 def insertFeedback(feedback):
     html.escape(feedback)
