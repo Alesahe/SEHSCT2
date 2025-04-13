@@ -8,10 +8,10 @@
         <input minlength="3" maxlength="20" type="text" name="username" placeholder="Username" class="input__field" required>
     </div>            
     <div class="input__wrapper">
-        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{10,}$" type="password" name="password" placeholder="Password" class="input__field" required>
+        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{10,30}$" title="All passwords must contain a lowercase letter, a capital letter, a number, a special character and be between 10-30 characters long." type="password" name="password" placeholder="Password" class="input__field" required>
     </div>
     <div class="input__wrapper">
-        <input placeholder="DD/MM/YYYY" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" type="dateOfBirth" name="dob" placeholder="Date of Birth" class="input__field" required>
+        <input placeholder="DD-MM-YYYY" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" type="dateOfBirth" title="All date-of-births must be presented in the format DD-MM-YYYY" name="dob" placeholder="Date of Birth" class="input__field" required>
     </div>
     <div class="input__wrapper">
         <button type="submit" class="btn">Submit</button>
